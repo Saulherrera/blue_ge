@@ -1,107 +1,113 @@
 /*
 Specific for services page
 */
-$pry_width: 76%;
-$sec_width: 25.5%;
+$pry_width: 79%;
+$sec_width: 20%;
 #content {
-  //max-width: $lg-width;
-  //margin: 0 auto;
   position: relative;
   #primary {
-    //float: left;
-    position: absolute;
-    width: $pry_width;
-    padding: 0 0 15px 0 ;
+    position: relative;
+    padding: 0 0 15px 0;
+    display: block;
+    main article .ctm-entry-content {
+      width: $pry_width;
+      float: left;
+    }
   }
   #secondary {
-    color: $blanco;
     display: block;
-    position: fixed;
-    left: $pry_width;
-    width: $sec_width;
     height: 100%;
+    width: $sec_width;
+    float: right;
     background-color: $azul_oscuro;
-    padding: 15px 0;
-    > img {
+    .sidebar-content {
+      position: relative;
+      color: $blanco;
       display: block;
-      width: 100px;
-      margin: 15px auto;
-    }
-    > ul {
-      margin: 50px 0;
-      padding: 0;
-      list-style: none;
-      li {
-        &.sideicon_dw a span{
-          background-image: url("img/sideicon_dw.png")
-        }
-        &.sideicon_rv a span{
-          background-image: url("img/sideicon_rv.png")
-        }
-        &.sideicon_sk a span{
-          background-image: url("img/sideicon_sk.png")
-        }
-        a {
-          display: block;
-          color: $blanco;
-          padding-left: 25px;
-          span {
-            background-position: 25% 50%;
-            background-repeat: no-repeat;
-            text-decoration: none;
-            display: inline-block;
-            width: 50px;
-            height: 50px;
-            vertical-align: middle;
+      max-width: 300px;
+      height: 100%;
+      padding: 15px 0;
+      > img {
+        display: block;
+        width: 100px;
+        margin: 15px auto;
+      }
+      > ul {
+        margin: 50px 0;
+        padding: 0;
+        list-style: none;
+        li {
+          &.sideicon_dw a span {
+            background-image: url("img/sideicon_dw.png")
           }
-          &:hover {
-            background-color: $azul_cian;
+          &.sideicon_rv a span {
+            background-image: url("img/sideicon_rv.png")
+          }
+          &.sideicon_sk a span {
+            background-image: url("img/sideicon_sk.png")
+          }
+          a {
+            display: block;
+            color: $blanco;
+            padding-left: 25px;
+            span {
+              background-position: 25% 50%;
+              background-repeat: no-repeat;
+              text-decoration: none;
+              display: inline-block;
+              width: 50px;
+              height: 50px;
+              vertical-align: middle;
+            }
+            &:hover {
+              background-color: $azul_cian;
+            }
           }
         }
       }
-    }
-    .sidecontent {
-      padding: 15px;
-      width: 260px;
-      margin: 0 auto;
-      dl {
-        dd {
-          margin: 0;
-          padding: 0;
+      .sidecontent {
+        padding: 15px;
+        width: 260px;
+        margin: 0 auto;
+        dl {
+          dd {
+            margin: 0;
+            padding: 0;
+          }
+        }
+        p a img {
+          width: 40px;
         }
       }
-      p a img {
-        width: 40px;
-      }
     }
-  }
-}
-
-#content.fixed{
-  #primary .entry-header, #secondary{
-    top: 0;
-    position: fixed;
   }
 }
 
 .page-services {
+
   .entry-header {
     display: table;
-    width: $pry_width;
+    width: 100%;
     text-align: center;
     color: $blanco;
-    position: fixed;
-    margin-top: -24px;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
     .entry-title {
-      background-repeat: no-repeat;
-      background-position: center center;
-      background-size: cover;
+      background-repeat: no-repeat, no-repeat;
+      background-position: 30% 90%, 70% 90%;
+      background-size: 300px;
+      background-image: url('img/il3_logo.png'), url('img/ub_logo.png');
       height: 400px;
       display: table-cell;
       vertical-align: middle;
     }
   }
-  .entry-content{
-    padding: 400px 25px 0 30px;
+  .content-container {
+    width: $xlg-width;
+    margin: 0 auto;
+  }
+  .entry-content {
+    padding: 0px 25px 0 0px;
   }
 }
