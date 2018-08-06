@@ -9,6 +9,17 @@ $sec_width: 20%;
     position: relative;
     padding: 0 0 15px 0;
     display: block;
+    h3, h2{
+      color: $azul_cian_claro;
+      &:after{
+        content: '';
+        position: relative;
+        display: block;
+        width: 220px;
+        height: 10px;
+        border-bottom: $azul_cian 2px solid;
+      }
+    }
     main article .ctm-entry-content {
       width: $pry_width;
       float: left;
