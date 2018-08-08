@@ -5,7 +5,7 @@ if (servicePage.length == 1) {
     var sidebarContainer = jQuery('aside#secondary');
     var sidebar = jQuery('aside#secondary .sidebar-content');
     var aplied = false;
-    sidebarContainer.height(generalContainer.height());
+    // sidebarContainer.height(generalContainer.height());
     jQuery(window).scroll(function (e) {
         var point = sidebarContainer[0].getBoundingClientRect().top;
         if (point < 30) { // top limit
