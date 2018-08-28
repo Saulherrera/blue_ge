@@ -1,0 +1,79 @@
+
+#ctm-charts-ge {
+  p,
+  .circlechart {
+    text-align: center;
+  }
+  p {
+    font-size: 16px;
+    color: $azul_cian_claro;
+    span {
+      display: block;
+    }
+  }
+}
+
+.circle-chart {
+  width: 150px;
+  height: 150px;
+}
+
+.circle-chart__circle {
+  fill: none;
+  stroke-width: 0;
+  stroke: $azul_oscuro;
+}
+
+.circle-chart__circle_animation {
+  stroke-width: 3;
+  stroke-linecap: round;
+  transform: rotate(-90deg); /* 2, 3 */
+  transform-origin: center; /* 4 */
+  animation: circle-chart-fill 2s reverse; /* 1 */
+}
+
+.circle-chart__circle--negative {
+  transform: rotate(-90deg) scale(1, -1); /* 1, 2, 3 */
+}
+
+.circle-chart__background {
+  stroke: #efefef;
+  stroke-width: 3;
+  fill: none;
+}
+
+.circle-chart__info {
+  animation: circle-chart-appear 2s forwards;
+  //opacity: 0;
+  //transform: translateY(0.3em);
+}
+
+.circle-chart__percent {
+  alignment-baseline: central;
+  text-anchor: middle;
+  font-size: 7px;
+  fill: #777777;
+}
+
+.circle-chart__subline {
+  alignment-baseline: central;
+  text-anchor: middle;
+  font-size: 3px;
+}
+
+.success-stroke {
+  stroke: $azul_oscuro;
+}
+
+@keyframes circle-chart-fill {
+  to {
+    stroke-dasharray: 0 100;
+  }
+}
+
+@keyframes circle-chart-appear {
+  to {
+    //opacity: 1;
+    //transform: translateY(0);
+  }
+}

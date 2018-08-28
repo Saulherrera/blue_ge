@@ -160,12 +160,120 @@ $sec_width: 24%;
     padding: 0px 0px 0 0px;
     margin: 0;
     font-size: 13px;
-    ul{
+    ul {
       padding: 0;
       margin: 20px;
     }
-    h2{
+    h2 {
       font-size: 1.4em;
     }
+
+    .ctm-contact-form-blue {
+      p {
+        margin: 0;
+        padding: 0;
+      }
+      background-color: $azul_palido;
+      font-size: 14px;
+      width: 100%;
+      padding: 20px 30px;
+      color: $blanco;
+      textarea,
+      input {
+        font-size: 14px;
+        padding: 7px 12px;
+        margin: 7px 0;
+        background-color: $azul_palido_claro;
+        border-color: $azul_palido_claro;
+        color: $blanco;
+        &:focus {
+          outline: 0px;
+        }
+      }
+      input {
+        width: 90%;
+        &.wpcf7-form-control::placeholder {
+          color: $blanco;
+        }
+        &.wpcf7-form-control:-ms-input-placeholder {
+          color: $blanco;
+        }
+      }
+      textarea {
+        width: 100%;
+        &::placeholder {
+          color: $blanco;
+        }
+        &:-ms-input-placeholder {
+          color: $blanco;
+        }
+      }
+      div {
+        width: 45%;
+        margin: 5px 0;
+        &.ctm-left {
+          float: left;
+          &.chkbox {
+            width: 90%;
+            input {
+              width: auto !important;
+            }
+          }
+        }
+        &.ctm-right {
+          float: right;
+          text-align: right;
+          &.ctm-submit {
+            width: 8%;
+            min-width: 60px;
+            input {
+              width: auto !important;
+            }
+          }
+        }
+      }
+    }
+  }
+  .temario {
+    div {
+      margin-top: 5px;
+      a {
+        width: 180px;
+        color: $negrisimo;
+        &:hover {
+          p span{
+            text-decoration: underline;
+          }
+        }
+        img, & {
+          margin: 0 auto;
+          display: block;
+        }
+        img {
+          margin: 10px auto;
+          width: 75px;
+        }
+        p {
+          width: 160px;
+          margin: 0 auto;
+          font-size: 12px;
+          span {
+            display: inline-block;
+            margin-left: 10px;
+          }
+          &:before {
+            content: '+ ';
+            display: inline-block;
+            color: $azul_vivo;
+            font-size: 18px;
+            margin-right: 2px;
+            font-weight: 300;
+          }
+        }
+      }
+    }
+  }
+  .teacher{
+
   }
 }

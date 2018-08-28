@@ -162,6 +162,10 @@ if ( defined( 'JETPACK__VERSION' ) ) {
 	require get_template_directory() . '/inc/jetpack.php';
 }
 
+/* prevent auto <p> in content*/
+
+remove_filter('the_content', 'wpautop');
+
 
 /*change wp admin*/
 
