@@ -169,6 +169,11 @@ $sec_width: 24%;
     }
 
     .ctm-contact-form-blue {
+      h4 {
+        font-size: 18px;
+        margin: 0px 0px 20px 0px;
+        font-weight: normal;
+      }
       p {
         margin: 0;
         padding: 0;
@@ -176,13 +181,13 @@ $sec_width: 24%;
       background-color: $azul_palido;
       font-size: 14px;
       width: 100%;
-      padding: 20px 30px;
+      padding: 40px 30px 20px 30px;
       color: $blanco;
       textarea,
       input {
         font-size: 14px;
-        padding: 7px 12px;
-        margin: 7px 0;
+        padding: 3px 7px;
+        margin: 5px 0;
         background-color: $azul_palido_claro;
         border-color: $azul_palido_claro;
         color: $blanco;
@@ -241,7 +246,7 @@ $sec_width: 24%;
         width: 180px;
         color: $negrisimo;
         &:hover {
-          p span{
+          p span {
             text-decoration: underline;
           }
         }
@@ -257,6 +262,7 @@ $sec_width: 24%;
           width: 160px;
           margin: 0 auto;
           font-size: 12px;
+          text-align: center;
           span {
             display: inline-block;
             margin-left: 10px;
@@ -273,7 +279,51 @@ $sec_width: 24%;
       }
     }
   }
-  .teacher{
-
+  .teachers_line {
+    background-color: $azul_claro_teachers;
+    color: $blanco;
+    margin: 55px 0 45px 0;
+    padding: 20px;
+    img {
+      float: left;
+      width: 120px;
+      height: 120px;
+      margin: 0px 25px 0px 0px;
+    }
+    a {
+      &:hover {
+        text-decoration: none;
+      }
+      color: $blanco;
+    }
+  }
+  .posts_line {
+    background-color: $azul_oscuro;
+    margin: 20px 0;
+    &, a {
+      color: $blanco;
+    }
+    div {
+      &:nth-child(even) {
+        background-color: $azul_oscuro_claro;
+      }
+      a {
+        &:hover {
+          > p {
+            span {
+              text-decoration: none;
+            }
+          }
+        }
+        p {
+          font-weight: bold;
+          span {
+            font-size: 10px;
+            display: block;
+            font-weight: normal;
+          }
+        }
+      }
+    }
   }
 }

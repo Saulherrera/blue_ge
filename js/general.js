@@ -63,7 +63,8 @@ function createCircle(clases) {
     }
     start();
 
-    function makesvg(percentage, inner_text="", clases) {
+    function makesvg(percentage, inner_text, clases) {
+        inner_text = typeof inner_text !== 'undefined' ? inner_text : "";
         var abs_percentage = Math.abs(percentage - 10).toString();
         var percentage_str = percentage.toString();
         var classes = ""

@@ -120,14 +120,15 @@ add_action( 'widgets_init', 'blue_ge_widgets_init' );
  * Enqueue scripts and styles.
  */
 function blue_ge_scripts() {
-	wp_enqueue_style( 'blue_ge-style', get_stylesheet_uri() );
+	$ver = microtime();
+	wp_enqueue_style( 'blue_ge-style', get_stylesheet_uri(), array(), $ver );
 
-	wp_enqueue_script( 'blue_ge-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20151215', true );
+	wp_enqueue_script( 'blue_ge-navigation', get_template_directory_uri() . '/js/navigation.js', array(), $ver, true );
 
-	wp_enqueue_script( 'blue_ge-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), '20151215', true );
+	wp_enqueue_script( 'blue_ge-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), $ver, true );
 
-	wp_enqueue_script( 'blue_ge-jquery', get_template_directory_uri() . '/js/jquery.min.js', array(), '20180806', true );
-	wp_enqueue_script( 'blue_ge-general', get_template_directory_uri() . '/js/general.js', array(), '20180806', true );
+	wp_enqueue_script( 'blue_ge-jquery', get_template_directory_uri() . '/js/jquery.min.js', array(), $ver, true );
+	wp_enqueue_script( 'blue_ge-general', get_template_directory_uri() . '/js/general.js', array(), $ver, true );
 
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
@@ -177,3 +178,6 @@ remove_filter('the_content', 'wpautop');
 //   $new = array($admin_dir);
 //   return preg_replace( $old, $new, $url, 1);
 //}
+
+/*/ mine /*/
+?>
