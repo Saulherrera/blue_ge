@@ -991,8 +991,11 @@ header#masthead {
     margin: 0 auto;
     max-height: 100px;
     .site-branding {
-      padding: 16px 0;
+      padding: 27px 0 16px 0;
       float: left;
+      img{
+        width: 150px;
+      }
     }
     #site-navigation {
       float: right;

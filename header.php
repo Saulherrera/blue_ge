@@ -28,7 +28,7 @@
         <div class="contenthead">
             <div class="site-branding">
                 <a href="<?= esc_url(home_url('/')); ?>">
-                    <img src="<?= get_template_directory_uri() ?>/img/logo_ge_b.png" alt="<?php bloginfo('name'); ?>">
+                    <img src="<?= get_template_directory_uri() ?>/img/logo_ge_c.png" alt="<?php bloginfo('name'); ?>">
                 </a>
             </div><!-- .site-branding -->
 
@@ -46,3 +46,4 @@
     </header><!-- #masthead -->
 
     <div id="content" class="site-content">
+
