@@ -21,11 +21,11 @@
 .circle-chart__circle {
   fill: none;
   stroke-width: 0;
-  stroke: $azul_oscuro;
+  //stroke: $azul_oscuro;
 }
 
 .circle-chart__circle_animation {
-  stroke-width: 3;
+  stroke-width: 2;
   stroke-linecap: round;
   transform: rotate(-90deg); /* 2, 3 */
   transform-origin: center; /* 4 */
@@ -38,7 +38,7 @@
 
 .circle-chart__background {
   stroke: #efefef;
-  stroke-width: 3;
+  stroke-width: 2;
   fill: none;
 }
 
@@ -62,7 +62,7 @@
 }
 
 .success-stroke {
-  stroke: $azul_oscuro;
+  //stroke: $azul_oscuro;
 }
 
 @keyframes circle-chart-fill {

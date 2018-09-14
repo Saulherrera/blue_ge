@@ -63,8 +63,26 @@ function createCircle(clases) {
     }
     start();
 
-    function makesvg(percentage, inner_text, clases) {
+    function makesvg(percentage, inner_text, clases, times) {
         inner_text = typeof inner_text !== 'undefined' ? inner_text : "";
+        switch (times) {
+            case 0:
+                // grad = "redyellow";
+                grad = "blue";
+                // grad = "green";
+                break;
+            case 1:
+                grad = "blue";
+                break;
+            case 2:
+                grad = "blue";
+                break;
+            default:
+                grad = "blue";
+                // grad = "redyellow";
+                break;
+        }
+        timeSVG++;
         var abs_percentage = Math.abs(percentage - 10).toString();
         var percentage_str = percentage.toString();
         var classes = ""
@@ -77,10 +95,31 @@ function createCircle(clases) {
             classes = "success-stroke";
         }
 
-        var svg = '<svg class="circle-chart" viewbox="0 0 33.83098862 33.83098862" xmlns="http://www.w3.org/2000/svg">'
+        var svg = '<svg class="circle-chart" viewbox="0 0 33.83098862 33.83098862" xmlns="http://www.w3.org/2000/svg"><defs>' +
+            '    <linearGradient id="gradient_redyellow" x1="0%" y1="0%" x2="0%" y2="100%">' +
+            '      <stop offset="0%" stop-color="#fcc449" />' +
+            '      <stop offset="30%" stop-color="#fc772c" />' +
+            '      <stop offset="80%" stop-color="#c7303f" />' +
+            '      <stop offset="100%" stop-color="#d3433a" />' +
+            '    </linearGradient>' + '    <linearGradient id="gradient_blue" x1="0%" y1="0%" x2="0%" y2="100%">' +
+            '      <stop offset="00%" stop-color="#29d2fb" />' +
+            // '      <stop offset="50%" stop-color="#21cfe8" />' +
+            // '      <stop offset="90%" stop-color="#21cfe8" />' +
+            '      <stop offset="60%" stop-color="#18354c" />' +
+            '      <stop offset="70%" stop-color="#18354c" />' +
+            '      <stop offset="80%" stop-color="#18354c" />' +
+            '      <stop offset="90%" stop-color="#18354c" />' +
+            '      <stop offset="100%" stop-color="#18354c" />' +
+            '    </linearGradient>' + '    <linearGradient id="gradient_green" x1="0%" y1="0%" x2="0%" y2="100%">' +
+            '      <stop offset="0%" stop-color="#95e1c7" />' +
+            '      <stop offset="30%" stop-color="#2f9d54" />' +
+            '      <stop offset="90%" stop-color="#22a548" />' +
+            '      <stop offset="100%" stop-color="#39a76a" />' +
+            '    </linearGradient>' +
+            '  </defs>'
             + '<circle class="circle-chart__background" cx="16.9" cy="16.9" r="14.9" />'
             + '<circle class="circle-chart__circle ' + classes + ' ' + clases + '"'
-            + 'stroke-dasharray="' + abs_percentage + ',100"    cx="16.9" cy="16.9" r="14.9" />'
+            + 'stroke-dasharray="' + abs_percentage + ',100"    cx="16.9" cy="16.9" r="14.9" stroke="url(#gradient_' + grad + ')"/>'
             + '<g class="circle-chart__info">'
             + '   <text class="circle-chart__percent" x="17.9" y="17">' + (percentage_str) + '%</text>';
         if (clases == '') {
@@ -98,10 +137,11 @@ function createCircle(clases) {
         (function ($) {
 
             $.fn.circlechart = function () {
+                timeSVG = 0;
                 this.each(function () {
                     var percentage = $(this).data("percentage");
                     var inner_text = $(this).text();
-                    $(this).html(makesvg(percentage, inner_text, clases));
+                    $(this).html(makesvg(percentage, inner_text, clases, timeSVG));
                 });
                 return this;
             };

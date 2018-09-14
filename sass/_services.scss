@@ -331,4 +331,15 @@ $sec_width: 24%;
       }
     }
   }
+  .display_table {
+    display: table;
+    text-align: center;
+  }
+  .display_table_row {
+    display: table-row;
+    vertical-align: middle;
+    img{
+      width: 50%;
+    }
+  }
 }
