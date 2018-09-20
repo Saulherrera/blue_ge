@@ -96,6 +96,7 @@ function blue_ge_content_width() {
 	// phpcs:ignore WordPress.NamingConventions.PrefixAllGlobals.NonPrefixedVariableFound
 	$GLOBALS['content_width'] = apply_filters( 'blue_ge_content_width', 640 );
 }
+
 add_action( 'after_setup_theme', 'blue_ge_content_width', 0 );
 
 /**
@@ -113,7 +114,34 @@ function blue_ge_widgets_init() {
 		'before_title'  => '<h2 class="widget-title">',
 		'after_title'   => '</h2>',
 	) );
+
+
+	/*CUSTOM WIDGETS*/
+	register_sidebar( array(
+			'name'          => 'footer_first',
+			'before_widget' => '<div class = "footer_first">',
+			'after_widget'  => '</div>',
+			'before_title'  => '<h3>',
+			'after_title'   => '</h3>',
+		) );
+	register_sidebar( array(
+			'name'          => 'footer_second',
+			'before_widget' => '<div class = "footer_second">',
+			'after_widget'  => '</div>',
+			'before_title'  => '<h3>',
+			'after_title'   => '</h3>',
+		) );
+	register_sidebar( array(
+			'name'          => 'footer_third',
+			'before_widget' => '<div class = "footer_third">',
+			'after_widget'  => '</div>',
+			'before_title'  => '<h3>',
+			'after_title'   => '</h3>',
+		) );
+
+	/*CUSTOM WIDGETS*/
 }
+
 add_action( 'widgets_init', 'blue_ge_widgets_init' );
 
 /**
@@ -134,6 +162,7 @@ function blue_ge_scripts() {
 		wp_enqueue_script( 'comment-reply' );
 	}
 }
+
 add_action( 'wp_enqueue_scripts', 'blue_ge_scripts' );
 
 /**
@@ -165,7 +194,7 @@ if ( defined( 'JETPACK__VERSION' ) ) {
 
 /* prevent auto <p> in content*/
 
-remove_filter('the_content', 'wpautop');
+remove_filter( 'the_content', 'wpautop' );
 
 
 /*change wp admin*/

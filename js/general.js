@@ -3,20 +3,32 @@ var servicePage = jQuery('.page-services');
 if (servicePage.length == 1) {
     var generalContainer = jQuery('.page-services .content-container');
     var sidebarContainer = jQuery('aside#secondary');
+    var footerContainer = jQuery('footer#footer');
     var sidebar = jQuery('aside#secondary .sidebar-content');
     var aplied = false;
     // sidebarContainer.height(generalContainer.height());
     jQuery(window).scroll(function (e) {
         var point = sidebarContainer[0].getBoundingClientRect().top;
+        var point_bottom = footerContainer[0].getBoundingClientRect().top;
+        var point_cnt = generalContainer[0].getBoundingClientRect().bottom;
+        var point_cnt_i = generalContainer[0].getBoundingClientRect().top;
         var guestWidth = null;
         if (point < 30) { // top limit
-            sidebar.css({
-                'position': 'fixed',
-                'top': '30px'
-            });
-            guestWidth = sidebarContainer.width();
-            if (guestWidth) {
-                sidebar.css({'width': guestWidth});
+            console.log("\n------------------\n");
+            console.log('cnt:' + point_cnt);
+            console.log('cnt_i:' + point_cnt_i);
+            console.log('footer:' + (point_bottom));
+            console.log(point_cnt > 617);
+            console.log("\n------------------\n");
+            if (point_cnt > 617) {
+                sidebar.css({
+                    'position': 'fixed',
+                    'top': '30px'
+                });
+                guestWidth = sidebarContainer.width();
+                if (guestWidth) {
+                    sidebar.css({'width': guestWidth});
+                }
             }
         } else {
             sidebar.css({
@@ -85,7 +97,7 @@ function createCircle(clases) {
         timeSVG++;
         var abs_percentage = Math.abs(percentage - 10).toString();
         var percentage_str = percentage.toString();
-        var classes = ""
+        var classes = "";
 
         if (percentage < 0) {
             classes = "danger-stroke circle-chart__circle--negative";
