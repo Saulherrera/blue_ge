@@ -37,7 +37,7 @@
       text-align: right;
     }
     .team_member_social_in,
-    .team_member_social_env{
+    .team_member_social_env {
       color: transparent;
       background-position: center;
       background-repeat: no-repeat;
@@ -45,15 +45,25 @@
       width: 20px;
       display: inline-block;
     }
-    .team_member_social_in{
+    .team_member_social_in {
       width: 24px;
       background-image: url("img/team-in.png");
     }
-    .team_member_social_env{
+    .team_member_social_env {
       margin-top: 5px;
       background-image: url("img/team-sobre.png");
     }
-
+  }
+  .services_line {
+    text-align: center;
+    h4 {
+      color: $azul_oscuro;
+    }
+    p{
+      span{
+        display: inline-block;
+      }
+    }
   }
 
 }
