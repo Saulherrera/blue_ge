@@ -12,7 +12,7 @@ $card_media = get_attached_media('')[$id_card_media];
 //var_dump($card_media);
 ?>
 
-<article class="page-general page-services" id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+<article class="page-general page-about" id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
     <?php
     $background = '';
     if (has_post_thumbnail()) {
@@ -23,36 +23,6 @@ $card_media = get_attached_media('')[$id_card_media];
     <header class="entry-header" <?= $background ?> >
         <?php the_title('<h1 class="entry-title">', '</h1>'); ?>
     </header><!-- .entry-header -->
-    <div class="content-details">
-        <div class="content-details_features">
-            <dl>
-                <dt>Titulación</dt>
-                <dd><?= $card_title ?></dd>
-                <dt>Dirección</dt>
-                <dd><?= $card_teacher ?></dd>
-                <dt>Créditos</dt>
-                <dd><?= $card_credits ?></dd>
-                <dt>Duración</dt>
-                <dd><?= $card_durations ?></dd>
-            </dl>
-            <dl>
-                <dt>Modalidades</dt>
-                <dd><?= $card_modalidades ?></dd>
-                <dt>Idioma</dt>
-                <dd><?= $card_language ?></dd>
-                <dt>Precio</dt>
-                <dd><?= $card_price ?></dd>
-                <dt></dt>
-                <dd></dd>
-            </dl>
-        </div>
-        <div class="content-details_media">
-            <a href="<?= $card_link_video ?>" alt="<?= $card_media->post_title ?>">
-                <img src="<?= $card_media->guid ?>" alt="<?= $card_media->post_title ?>">
-            </a>
-        </div>
-        <div class="clear"></div>
-    </div>
     <div class="content-container">
         <div class="ctm-entry-content">
             <div class="entry-content">

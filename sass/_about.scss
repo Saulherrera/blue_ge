@@ -1,0 +1,59 @@
+.page-about {
+  .entry-header {
+    .entry-title {
+      height: 630px;
+      padding-top: 430px;
+    }
+  }
+  .entry-content {
+    margin-top: 15px;
+  }
+  h3 {
+    color: $azul_cian;
+    &:after {
+      width: 140px !important;
+    }
+  }
+  .team {
+    .team_member {
+      margin-top: 12px;
+      margin-bottom: 12px;
+    }
+    .team_member_social,
+    .team_member_title {
+      background-color: $azul_oscuro_sec;
+      margin: 0;
+      padding: 0;
+    }
+    .team_member_title {
+      color: $blanco;
+      padding: 12px 12px 0 12px;
+      h4, p {
+        margin: 0;
+      }
+    }
+    .team_member_social {
+      padding: 0 12px 12px 12px;
+      text-align: right;
+    }
+    .team_member_social_in,
+    .team_member_social_env{
+      color: transparent;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: contain;
+      width: 20px;
+      display: inline-block;
+    }
+    .team_member_social_in{
+      width: 24px;
+      background-image: url("img/team-in.png");
+    }
+    .team_member_social_env{
+      margin-top: 5px;
+      background-image: url("img/team-sobre.png");
+    }
+
+  }
+
+}
