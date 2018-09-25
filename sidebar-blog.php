@@ -1,28 +1,12 @@
-<?php
-/**
- * The sidebar containing the main widget area
- *
- * @link https://developer.wordpress.org/themes/basics/template-files/#template-partials
- *
- * @package blue_ge
- */
-$chkr    = is_home() || is_singular();
-$chkr2 = (is_page_template( 'services.php' )) || (is_page_template('courses.php'));
-if ( $chkr && (!$chkr2) ) {
-		return;
-}
-
-?>
-
 <aside id="secondary" class="widget-area">
     <div class="sidebar-content">
         <img src="<?= get_template_directory_uri() ?>/img/logo_ge_white.png" alt="Gestor Energético">
-        <ul>
-            <li class="sideicon_dw"><a href="#"><span></span><?= esc_html__( 'Descarga el temario', 'blue_ge' ) ?></a>
-            </li>
-            <li class="sideicon_rv"><a href="#"><span></span><?= esc_html__( 'Reserva tu plaza', 'blue_ge' ) ?></a></li>
-            <li class="sideicon_sk"><a href="#"><span></span><?= esc_html__( 'Pregúntanos', 'blue_ge' ) ?></a></li>
-        </ul>
+		<?php
+		wp_nav_menu( array(
+			'theme_location' => 'sidebar-2',
+			'menu_id'        => 'sidebar-second',
+		) );
+		?>
         <div class="sidecontent">
             <dl>
                 <dd>Teléfono (+34) 93 307 13 54</dd>

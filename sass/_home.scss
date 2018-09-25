@@ -1,0 +1,74 @@
+/*
+page home / blog
+*/
+.page-home {
+  .main-text{
+    color: $azul_oscuro_sec;
+  }
+  .main-lastest-post {
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    position: relative;
+    .main-lastest-post-shadow {
+      padding: 30px;
+      &:before {
+        content: ' ';
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: 0;
+        bottom: 0;
+        z-index: 0;
+        background: -moz-linear-gradient(left, rgba(0, 0, 0, 0.2) 0%, rgba(0, 0, 0, 0.2) 20%, rgba(0, 0, 0, 0.65) 100%);
+        background: -webkit-linear-gradient(left, rgba(0, 0, 0, 0.2) 0%, rgba(0, 0, 0, 0.2) 20%, rgba(0, 0, 0, 0.65) 100%);
+        background: linear-gradient(to right, rgba(0, 0, 0, 0.2) 0%, rgba(0, 0, 0, 0.2) 20%, rgba(0, 0, 0, 0.65) 100%);
+        filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#00000000', endColorstr='#a6000000', GradientType=1);
+      }
+    }
+    h2 {
+      color: $blanco !important;
+      font-size: 1.2em;
+      &:after {
+        width: 170px !important;
+        border-bottom: #ffffff 2px solid !important;
+      }
+    }
+    h1 {
+      font-size: 1.5em;
+      color: $blanco !important;
+    }
+    p {
+      font-size: 0.8em;
+      color: $blanco !important;
+    }
+    .main-latest-post-date {
+      text-align: center;
+      a {
+        background-color: $blanco;
+        padding: 5px 10px;
+        color: $azul_oscuro;
+      }
+      p {
+        color: $blanco;
+        font-size: 1.2em;
+      }
+    }
+  }
+  #secondary {
+    .sidebar-content {
+      ul#sidebar-second {
+        text-align: center;
+        padding: 0;
+        margin: 0;
+        list-style: none;
+        li {
+          a {
+            padding-left: 0 !important;
+            line-height: 50px;
+          }
+        }
+      }
+    }
+  }
+}

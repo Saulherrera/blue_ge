@@ -45,6 +45,7 @@ if ( ! function_exists( 'blue_ge_setup' ) ) :
 		// This theme uses wp_nav_menu() in one location.
 		register_nav_menus( array(
 			'menu-1' => esc_html__( 'Primary', 'blue_ge' ),
+			'sidebar-2' => esc_html__( 'Sidebar Blog', 'blue_ge' ),
 		) );
 
 		/*
