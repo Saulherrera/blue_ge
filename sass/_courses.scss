@@ -4,6 +4,11 @@ Specific for courses page
 
 .page-general.page-courses {
   .temario_line{
+    h3{
+      &:after{
+        display: none !important;
+      }
+    }
     background: $blanquesino;
     padding: 15px 0;
     a{
@@ -19,6 +24,12 @@ Specific for courses page
         background: $blanco;
         padding: 0 15px;
         margin-top: 5px;
+        &:before{
+          color: $azul_oscuro_sec;
+          font-size: 30px;
+          font-weight: bold;
+          vertical-align: bottom;
+        }
         span{
           display: inline;
         }
