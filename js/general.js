@@ -164,3 +164,22 @@ function createCircle(clases) {
     }
 }
 
+function slides(dir) {
+    var ele = $('.carousel-inner');
+    var current = ele.css('left');
+    var items = ele.find('.item').length;
+    var translationMargin = 10;
+    var translation = Math.abs(parseInt($($('.carousel-inner').find('.item')[0]).css('width')));
+    translation += translationMargin;
+    // translation '180px' parse
+    //
+    console.log(current); // DEBUG
+    //
+    if (dir == 'left') {
+        if (current != '0px') {
+            ele.css('left', '-=' + translation);
+        }
+    } else if (dir == 'right') {
+        ele.css('left', '+=' + translation);
+    }
+}

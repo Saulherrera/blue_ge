@@ -388,16 +388,22 @@ $sec_width: 24%;
       width: 20000px;
       height: 299px;
       overflow: hidden;
+      position: absolute;
       .item {
         width: 180px;
         padding: 0px 0px 12px 0px;
         display: block;
         float: left;
         background-color: #efefef;
+        margin-left: 10px;
+        &:first-child {
+          margin-left: 0px;
+        }
       }
     }
     .carousel.slide {
       position: relative;
+      height: 299px;
       .carousel-control {
         a {
           width: 50px;
