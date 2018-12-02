@@ -29,7 +29,7 @@
                 </div>
                 <div class="col-sm-6">
                     <p>
-                        <strong>Máxico</strong>
+                        <strong>México</strong>
                         <strong>Mariana Aristizabal</strong>
                         <span>LEED AP Ing. Electrónica</span>
                         <span>Magister en energías renovables</span>

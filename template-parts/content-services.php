@@ -9,10 +9,20 @@ $card_language = get_post_custom_values('card_language')[0];
 $card_price = get_post_custom_values('card_price')[0];
 $card_link_video = get_post_custom_values('ctm_url_video')[0];
 $card_media = get_attached_media('')[$id_card_media];
+
 //var_dump($card_media);
+$class_tmp = (get_the_ID() == 218) ? 'modified' : '';
+if($class_tmp != ''){
+//    var_dump(get_attached_media(''));
+    $card_media = (object)[
+        'post_title' =>  'tlte',
+        'guid' =>  'http://practicas.gestor-energetico.com/site/wp-content/uploads/2018/09/master_bim_video.jpg',
+        'post_title' =>  'sssss'
+    ];
+}
 ?>
 
-<article class="page-general page-services" id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+<article class="page-general page-services <?= $class_tmp ?>" id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
     <?php
     $background = '';
     if (has_post_thumbnail()) {
@@ -23,28 +33,57 @@ $card_media = get_attached_media('')[$id_card_media];
     <header class="entry-header" <?= $background ?> >
         <?php the_title('<h1 class="entry-title">', '</h1>'); ?>
     </header><!-- .entry-header -->
+    <?php if($class_tmp != ''): ?>
+    <div class="content-container">
+        <div class="ctm-entry-content">
+            <div class="entry-content">
+                <h1 style="    font-size: 35px;line-height: 70px;padding-left: 20px;">
+                    <?php the_title() ?>
+                </h1>
+            </div>
+        </div>
+    </div>
+    <?php endif; ?>
     <div class="content-details">
         <div class="content-details_features">
-            <dl>
-                <dt>Titulación</dt>
-                <dd><?= $card_title ?></dd>
-                <dt>Dirección</dt>
-                <dd><?= $card_teacher ?></dd>
-                <dt>Créditos</dt>
-                <dd><?= $card_credits ?></dd>
-                <dt>Duración</dt>
-                <dd><?= $card_durations ?></dd>
-            </dl>
-            <dl>
-                <dt>Modalidades</dt>
-                <dd><?= $card_modalidades ?></dd>
-                <dt>Idioma</dt>
-                <dd><?= $card_language ?></dd>
-                <dt>Precio</dt>
-                <dd><?= $card_price ?></dd>
-                <dt></dt>
-                <dd></dd>
-            </dl>
+            <div class="row">
+                <div class="col-xs-6">
+                    <div class="ctm_block ctm_ft_titulo">
+                        <h4>Titulación</h4>
+                        <p><?= $card_title ?></p>
+                    </div>
+                    <div class="ctm_block ctm_ft_teacher">
+                        <h4>Dirección</h4>
+                        <p><?= $card_teacher ?></p>
+                    </div>
+                    <div class="ctm_block ctm_ft_credit">
+                        <h4>Créditos</h4>
+                        <p><?= $card_credits ?></p>
+                    </div>
+                    <div class="ctm_block ctm_ft_time">
+                        <h4>Duración</h4>
+                        <p><?= $card_durations ?></p>
+                    </div>
+                </div>
+                <div class="col-xs-6">
+                    <div class="ctm_block ctm_ft_mode">
+                        <h4>Modalidades</h4>
+                        <p><?= $card_modalidades ?></p>
+                    </div>
+                    <div class="ctm_block ctm_ft_lang">
+                        <h4>Idioma</h4>
+                        <p><?= $card_language ?></p>
+                    </div>
+                    <div class="ctm_block ctm_ft_price">
+                        <h4>Precio</h4>
+                        <p><?= $card_price ?></p>
+                    </div>
+                    <div class="ctm_block ctm_ft_pay">
+                        <p>Paga en cuotas sin intereses,<span>con becas de hasta el 20%</span>
+                        </p>
+                    </div>
+                </div>
+            </div>
         </div>
         <div class="content-details_media">
             <a href="<?= $card_link_video ?>" alt="<?= $card_media->post_title ?>">

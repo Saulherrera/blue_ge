@@ -3,14 +3,30 @@ Specific for FOOTER
 */
 
 #footer {
-  background-color: $footer_bg;
-  background-image: url("img/logo_footer.png");
+  background-color: $azul_turquesa_dos;
+  background-color: $azul_turquesa;
+  //background-image: url("img/logo_footer.png");
   background-repeat: no-repeat;
   background-position: center right;
   background-size: contain;
   color: $blanco;
   padding: 50px 0;
   min-height: 302px;
+  font-size: 14px;
+  p{
+    font-size: 14px;
+    a{
+      color: $blanco;
+    }
+  }
+  .footer-location{
+    background-image: url("img/footer_location.png");
+    background-position: 80% center;
+    background-repeat: no-repeat;
+    height: 100px;
+    width: 100%;
+    margin-top: 15px;
+  }
   .footer_first {
     font-size: 1.25rem;
     padding-left: 20px;

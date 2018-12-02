@@ -18,13 +18,17 @@
     <link rel="profile" href="https://gmpg.org/xfn/11">
 
     <?php wp_head(); ?>
+
+
 </head>
 
 <body <?php body_class(); ?>>
 <div id="page" class="site">
     <a class="skip-link screen-reader-text" href="#content"><?php esc_html_e('Skip to content', 'blue_ge'); ?></a>
-
-    <header id="masthead" class="site-header">
+    <?php
+    $class_tmp = (get_the_ID() == 218) ? 'modified' : '';
+    ?>
+    <header id="masthead" class="site-header <?= $class_tmp ?>">
         <div class="contenthead">
             <div class="site-branding">
                 <a href="<?= esc_url(home_url('/')); ?>">

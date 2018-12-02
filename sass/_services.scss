@@ -6,9 +6,9 @@ Specific for services page
   .entry-header {
     .entry-title {
       background-repeat: no-repeat, no-repeat;
-      background-position: 30% 90%, 70% 90%;
-      background-size: 300px;
-      background-image: url('img/il3_logo.png'), url('img/ub_logo.png');
+      background-position: 34% 90%, 67% 91%;
+      background-size: 300px, 220px;
+      background-image: url('img/il3_logo.png'), url('img/logo_ge_blanco.png');
     }
   }
   .content-details {
@@ -42,7 +42,6 @@ Specific for services page
     }
   }
   .content-details,
-
   .content-details {
     margin: 50px auto;
     font-size: 1.1em;
@@ -50,4 +49,60 @@ Specific for services page
       height: 290px;
     }
   }
+  .content-details_features {
+    background-color: #f4f4f4;
+    padding: 24px;
+  }
+  .content-details_features .ctm_block {
+    margin-top: 10px;
+    padding-left: 46px;
+  }
+  .content-details_features .ctm_block h4 {
+    margin: 0;
+    color: #132a3c;
+    font-size: 13px;
+  }
+  .content-details_features .ctm_block p {
+    margin: 5px 0 0 0;
+    font-size: 12px;
+  }
+  .content-details_features .ctm_block p span {
+    display: block;
+  }
+  .content-details_features .ctm_block:before {
+    content: "";
+    background-image: url("http://practicas.gestor-energetico.com/site/ctm_assets/services/general_logos/ficha_tecnica_iconos.png");
+    background-repeat: no-repeat;
+    background-position: -4px -8px;
+    margin-left: -48px;
+    display: block;
+    width: 36px;
+    height: 36px;
+    position: absolute;
+  }
+
+  /*/ col-1 /*/
+  .content-details_features .ctm_ft_teacher.ctm_block:before {
+    background-position: -4px -56px;
+  }
+  .content-details_features .ctm_ft_credit.ctm_block:before {
+    background-position: -4px -104px;
+  }
+  .content-details_features .ctm_ft_time.ctm_block:before {
+    background-position: -4px -152px;
+  }
+  /*/ col-2 /*/
+  .content-details_features .ctm_ft_mode.ctm_block:before {
+    background-position: -52px -8px;
+  }
+  .content-details_features .ctm_ft_lang.ctm_block:before {
+    background-position: -52px -56px;
+  }
+  .content-details_features .ctm_ft_price.ctm_block:before {
+    background-position: -52px -104px;
+  }
+  .content-details_features .ctm_ft_pay.ctm_block:before {
+    background-position: -52px -152px;
+  }
+
 }

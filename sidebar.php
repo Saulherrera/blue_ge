@@ -40,3 +40,4 @@ if ( $chkr && (!$chkr2) ) {
     </div>
     <div class="clear"></div>
 </aside><!-- #secondary -->
+

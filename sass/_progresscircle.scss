@@ -1,12 +1,16 @@
 
 #ctm-charts-ge {
+  height: 230px;
+  margin-top: 30px;
   p,
   .circlechart {
     text-align: center;
   }
   p {
-    font-size: 16px;
-    color: $azul_cian_claro;
+    margin-top: -105px;
+    font-size: 13px;
+    color: #4b617b;
+    width: 100%;
     span {
       display: block;
     }
@@ -14,8 +18,8 @@
 }
 
 .circle-chart {
-  width: 150px;
-  height: 150px;
+  width: 220px;
+  height: 220px;
 }
 
 .circle-chart__circle {
@@ -26,7 +30,6 @@
 
 .circle-chart__circle_animation {
   stroke-width: 2;
-  stroke-linecap: round;
   transform: rotate(-90deg); /* 2, 3 */
   transform-origin: center; /* 4 */
   animation: circle-chart-fill 2s reverse; /* 1 */
@@ -51,14 +54,15 @@
 .circle-chart__percent {
   alignment-baseline: central;
   text-anchor: middle;
-  font-size: 7px;
-  fill: #777777;
+  font-size: 8px;
+  fill: #4b617b;
 }
 
 .circle-chart__subline {
   alignment-baseline: central;
   text-anchor: middle;
   font-size: 3px;
+  color: #4b617b;
 }
 
 .success-stroke {

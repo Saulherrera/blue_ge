@@ -1,30 +1,29 @@
 /*load sidebar*/
 var servicePage = jQuery('.page-services');
-if (servicePage.length == 1) {
+if (servicePage.length === 1) {
     var generalContainer = jQuery('.page-services .content-container');
     var sidebarContainer = jQuery('aside#secondary');
     var footerContainer = jQuery('footer#footer');
     var sidebar = jQuery('aside#secondary .sidebar-content');
     var aplied = false;
-    // sidebarContainer.height(generalContainer.height());
-    jQuery(window).scroll(function (e) {
+
+
+    jQuery(window).on('scroll', sidebarFixed);
+    sidebarFixed();
+
+    function sidebarFixed(callback) {
+        callback = typeof callback !== 'undefined' ? callback : true;
         var point = sidebarContainer[0].getBoundingClientRect().top;
         var point_bottom = footerContainer[0].getBoundingClientRect().top;
         var point_cnt = generalContainer[0].getBoundingClientRect().bottom;
         var point_cnt_i = generalContainer[0].getBoundingClientRect().top;
         var guestWidth = null;
+        var infLimit = 581;
         if (point < 30) { // top limit
-            console.log("\n------------------\n");
-            console.log('cnt:' + point_cnt);
-            console.log('cnt_i:' + point_cnt_i);
-            console.log('footer:' + (point_bottom));
-            console.log(point_cnt > 617);
-            console.log("\n------------------\n");
-            if (point_cnt > 617) {
-                sidebar.css({
-                    'position': 'fixed',
-                    'top': '30px'
-                });
+            if (point_cnt > infLimit) {
+                sidebar.animate({
+                    'top': (Math.abs(point_cnt_i) + 30) + 'px'
+                }, 0);
                 guestWidth = sidebarContainer.width();
                 if (guestWidth) {
                     sidebar.css({'width': guestWidth});
@@ -37,7 +36,10 @@ if (servicePage.length == 1) {
                 'width': '100%'
             });
         }
-    });
+        if (callback) {
+            setTimeout(sidebarFixed(false), 1000);
+        }
+    }
 
     var charts = jQuery('#ctm-charts-ge');
     if (charts.length == 1) {
@@ -109,31 +111,31 @@ function createCircle(clases) {
 
         var svg = '<svg class="circle-chart" viewbox="0 0 33.83098862 33.83098862" xmlns="http://www.w3.org/2000/svg"><defs>' +
             '    <linearGradient id="gradient_redyellow" x1="0%" y1="0%" x2="0%" y2="100%">' +
-            '      <stop offset="0%" stop-color="#fcc449" />' +
-            '      <stop offset="30%" stop-color="#fc772c" />' +
-            '      <stop offset="80%" stop-color="#c7303f" />' +
-            '      <stop offset="100%" stop-color="#d3433a" />' +
+            '      <stop offset="0%" stop-color="#132a3c" />' +
+            '      <stop offset="30%" stop-color="#132a3c" />' +
+            '      <stop offset="80%" stop-color="#132a3c" />' +
+            '      <stop offset="100%" stop-color="#132a3c" />' +
             '    </linearGradient>' + '    <linearGradient id="gradient_blue" x1="0%" y1="0%" x2="0%" y2="100%">' +
-            '      <stop offset="00%" stop-color="#29d2fb" />' +
-            // '      <stop offset="50%" stop-color="#21cfe8" />' +
-            // '      <stop offset="90%" stop-color="#21cfe8" />' +
-            '      <stop offset="60%" stop-color="#18354c" />' +
-            '      <stop offset="70%" stop-color="#18354c" />' +
-            '      <stop offset="80%" stop-color="#18354c" />' +
-            '      <stop offset="90%" stop-color="#18354c" />' +
-            '      <stop offset="100%" stop-color="#18354c" />' +
+            '      <stop offset="00%" stop-color="#132a3c" />' +
+            // '      <stop offset="50%" stop-color="#132a3c" />' +
+            // '      <stop offset="90%" stop-color="#132a3c" />' +
+            '      <stop offset="60%" stop-color="#132a3c" />' +
+            '      <stop offset="70%" stop-color="#132a3c" />' +
+            '      <stop offset="80%" stop-color="#132a3c" />' +
+            '      <stop offset="90%" stop-color="#132a3c" />' +
+            '      <stop offset="100%" stop-color="#132a3c" />' +
             '    </linearGradient>' + '    <linearGradient id="gradient_green" x1="0%" y1="0%" x2="0%" y2="100%">' +
-            '      <stop offset="0%" stop-color="#95e1c7" />' +
-            '      <stop offset="30%" stop-color="#2f9d54" />' +
-            '      <stop offset="90%" stop-color="#22a548" />' +
-            '      <stop offset="100%" stop-color="#39a76a" />' +
+            '      <stop offset="0%" stop-color="#132a3c" />' +
+            '      <stop offset="30%" stop-color="#132a3c" />' +
+            '      <stop offset="90%" stop-color="#132a3c" />' +
+            '      <stop offset="100%" stop-color="#132a3c" />' +
             '    </linearGradient>' +
             '  </defs>'
             + '<circle class="circle-chart__background" cx="16.9" cy="16.9" r="14.9" />'
             + '<circle class="circle-chart__circle ' + classes + ' ' + clases + '"'
             + 'stroke-dasharray="' + abs_percentage + ',100"    cx="16.9" cy="16.9" r="14.9" stroke="url(#gradient_' + grad + ')"/>'
             + '<g class="circle-chart__info">'
-            + '   <text class="circle-chart__percent" x="17.9" y="17">' + (percentage_str) + '%</text>';
+            + '   <text class="circle-chart__percent" x="17.9" y="14">' + (percentage_str) + '%</text>';
         if (clases == '') {
             if (inner_text) {
                 svg += '<text class="circle-chart__subline" x="16.91549431" y="22">' + inner_text + '</text>'
@@ -161,3 +163,4 @@ function createCircle(clases) {
         }(jQuery));
     }
 }
+

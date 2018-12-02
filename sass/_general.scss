@@ -12,21 +12,23 @@
 
 $azul_vivo: #001eff;
 $azul_oscuro: #132a3c;
-$azul_oscuro_sec: #1d2b3a;
+$azul_oscuro_sec: #262b60;
 $azul_oscuro_claro: #18354c;
 $azul_cian: #3e607b;
 $azul_cian_claro: #1a80b6;
 $azul_claro_teachers: #3e607b;
 $azul_palido: #4b607a;
 $azul_palido_claro: #63758a;
+$azul_turquesa: #0b2637;
+$azul_turquesa_dos: #003333;
 
 $negrisimo: #010101;
 $negro: #3d3d3d;
 $blanco: #fff;
 $blanquesino: #f4f4f4;
 
+$oscurito: #4d4d4d;
 $footer_bg: #383838;
-
 
 //SIZES - Media Queries
 
@@ -119,7 +121,11 @@ $sec_width: 24%;
             padding: 0;
           }
         }
-        p a img {
+        p a {
+          display: inline-block;
+          margin: 2px 1px;
+          img {
+          }
           width: 32px;
         }
       }
@@ -275,59 +281,190 @@ $sec_width: 24%;
     div {
       margin-top: 5px;
       a {
+        margin: 34px 0 0 0;
+        display: block;
         width: 180px;
-        color: $negrisimo;
+        color: $azul_oscuro_sec;
+        span.ctm_pictograma {
+          display: block;
+          width: 65px;
+          height: 65px;
+          margin-left: 15px;
+          background-image: url("/site/ctm_assets/services/bim/logos_modulos_master_bim_def.png");
+          background-repeat: no-repeat;
+          background-position-x: -15px;
+        }
         &:hover {
+          color: $azul_cian;
+          text-decoration: none;
+          span.ctm_pictograma {
+            background-position-x: -109px;
+          }
           p span {
-            text-decoration: underline;
           }
         }
-        img, & {
+        img {
           margin: 0 auto;
           display: block;
         }
         img {
-          margin: 10px auto;
-          width: 75px;
+          margin: 10px 0;
+          height: 75px;
         }
         p {
-          width: 160px;
+          width: 210px;
           margin: 0 auto;
-          font-size: 12px;
-          text-align: center;
+          font-size: 16px;
+          text-align: left;
           height: 45px;
-          span {
-            display: inline-block;
-            margin-left: 00px;
+          padding-left: 15px;
+          strong {
+            //display: block;
+            line-height: 18px;
+            span {
+              display: block;
+              margin-left: 00px;
+            }
           }
           &:before {
-            content: '+ ';
-            display: inline-block;
-            color: $azul_vivo;
-            font-size: 18px;
+            content: "+ ";
+            display: block;
+            font-size: 16px;
             margin-right: 2px;
             font-weight: 300;
+            position: absolute;
+            height: 45px;
+            left: 20px;
           }
         }
+      }
+      &.m_1 a span.ctm_pictograma {
+        background-position-y: -15px;
+      }
+      &.m_2 a span.ctm_pictograma {
+        background-position-y: -110px;
+      }
+      &.m_3 a span.ctm_pictograma {
+        background-position-y: -205px;
+      }
+      &.m_4 a span.ctm_pictograma {
+        background-position-y: -300px;
+      }
+      &.m_5 a span.ctm_pictograma {
+        background-position-y: -395px;
+      }
+      &.m_6 a span.ctm_pictograma {
+        background-position-y: -490px;
+      }
+      &.m_7 a span.ctm_pictograma {
+        background-position-y: -581px;
+      }
+      &.m_8 a span.ctm_pictograma {
+        background-position-y: -672px;
+      }
+      &.m_9 a span.ctm_pictograma {
+        background-position-y: -763px;
+      }
+      &.m_10 a span.ctm_pictograma {
+        background-position-y: -857px;
+      }
+      &.m_11 a span.ctm_pictograma {
+        background-position-y: -955px;
+      }
+      &.m_12 a span.ctm_pictograma {
+        background-position-y: -1046px;
       }
     }
   }
+  // Carrousel
   .teachers_line {
-    background-color: $azul_claro_teachers;
     color: $blanco;
+    background-color: #f4f4f4;
     margin: 55px 0 45px 0;
-    padding: 20px;
-    img {
-      float: left;
-      width: 120px;
-      height: 120px;
-      margin: 0px 25px 0px 0px;
-    }
-    a {
-      &:hover {
-        text-decoration: none;
+    padding: 10px;
+    height: 315px;
+    overflow: hidden;
+    .carousel-inner {
+      width: 20000px;
+      height: 299px;
+      overflow: hidden;
+      .item {
+        width: 180px;
+        padding: 0px 0px 12px 0px;
+        display: block;
+        float: left;
+        background-color: #efefef;
       }
-      color: $blanco;
+    }
+    .carousel.slide {
+      position: relative;
+      .carousel-control {
+        a {
+          width: 50px;
+          height: 33px;
+          padding: 3px 10px;
+          display: block;
+          background-color: rgba(0, 0, 0, 0.5);
+          &:hover {
+            background-color: rgba(255, 255, 255, 0.2);
+            span {
+              color: $negrisimo;
+            }
+          }
+          span {
+            font-size: 26px !important;
+          }
+        }
+      }
+      .carousel-control.left, .carousel-control.right {
+        width: 50px;
+        position: absolute;
+        top: 50%;
+        margin: 0;
+      }
+      .carousel-control.left {
+        left: 10px;
+      }
+      .carousel-control.right {
+        right: 10px;
+      }
+    }
+  }
+  .casos_line {
+    color: $blanco;
+    padding: 15px;
+    margin: 15px;
+    a {
+      color: #fff !important;
+    }
+    .ctm_case {
+      background-repeat: no-repeat;
+      background-size: 115% 100%;
+      background-position: center right;
+      .ctm_case_content {
+        background-color: rgba(75, 97, 123, 0.87);
+        padding: 15px 25px;
+        h1 {
+          font-weight: lighter;
+          font-size: 16px;
+          margin-bottom: 0;
+        }
+        h2 {
+          color: #FFFFFF !important;
+          font-weight: lighter;
+          line-height: 21px;
+          margin-top: 0;
+          font-weight: 600;
+          &:after {
+            display: none !important;
+          }
+        }
+        p {
+          font-size: 12px;
+          margin-bottom: 8px;
+          font-weight: normal;
+        }
+      }
     }
   }
   .posts_line {
@@ -370,8 +507,37 @@ $sec_width: 24%;
   .display_table_row {
     display: table-row;
     vertical-align: middle;
-    img{
+    img {
       width: 50%;
     }
   }
 }
+
+.method_line {
+  margin-top: 40px;
+  > div {
+    text-align: center;
+    h4 {
+      font-size: 25px;
+      color: #4b617b;
+      margin-top: 15px;
+      margin-bottom: 10px;
+      span {
+        display: block;
+      }
+    }
+  }
+}
+
+.white-space {
+  margin: 30px 0;
+}
+
+.modified .entry-title {
+  color: transparent;
+}
+
+.site-header.modified {
+  background-color: rgba(75, 96, 122, 0.7);
+}
+

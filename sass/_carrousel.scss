@@ -1,0 +1,46 @@
+
+/**/
+.col-centered {
+    float: none;
+    margin: 0 auto;
+}
+
+.carousel-control {
+    width: 8%;
+    width: 0px;
+}
+.carousel-control.left,
+.carousel-control.right {
+    margin-right: 40px;
+    margin-left: 32px;
+    background-image: none;
+    opacity: 1;
+}
+.carousel-control > a > span {
+    color: white;
+    font-size: 29px !important;
+}
+
+.ctm-carousel-col {
+    .card{
+        overflow: hidden;
+        font-size: 12px;
+        font-weight: normal;
+        color: #8d8d90;
+        text-align: center;
+        h3{
+            font-size: 14px;
+            font-weight: bold;
+            margin-bottom: 0;
+            margin-top: 10px;
+            &:after{
+                display: none !important;
+            }
+        }
+        h4{
+            color: $azul_cian;
+            margin: 0;
+            font-weight: normal;
+        }
+    }
+}
