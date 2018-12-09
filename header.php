@@ -29,6 +29,37 @@
     $class_tmp = (get_the_ID() == 218) ? 'modified' : '';
     ?>
     <header id="masthead" class="site-header <?= $class_tmp ?>">
+        <div class="pre-header">
+            <div class="container">
+
+                <ul class="pre-header-left">
+                    <li>
+                        <a href="tel:+34933071354">
+                            <strong>
+                                (+34) 93.307.13.54
+                            </strong>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="mailto:info@gestor-energetico.com">
+                            <strong>
+                                info@gestor-energetico.com
+                            </strong>
+                        </a>
+                    </li>
+                </ul>
+                <ul class="pre-header-right">
+                    <li>
+                        <a href="#">
+                            Contáctanos
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://campus.gestor-energetico.com/" target="_blank">Campus Virtual</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
         <div class="contenthead">
             <div class="site-branding">
                 <a href="<?= esc_url(home_url('/')); ?>">

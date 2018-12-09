@@ -978,6 +978,36 @@ object {
 }
 
 /********************************************************************/
+header {
+  .pre-header {
+    background-color: rgba(28, 42, 57, 0.24);
+    ul {
+      &.pre-header-right,
+      &.pre-header-left {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        li {
+          display: inline-block;
+          float: left;
+          padding: 15px 15px;
+          a {
+            font-size: 13px;
+            color: $blanco;
+            padding: 15px 15px;
+            font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+          }
+        }
+      }
+      &.pre-header-left {
+        float: left;
+      }
+      &.pre-header-right {
+        float: right;
+      }
+    }
+  }
+}
 
 header#masthead {
   padding: 0 15px;
@@ -993,7 +1023,7 @@ header#masthead {
     .site-branding {
       padding: 27px 0 16px 0;
       float: left;
-      img{
+      img {
         width: 150px;
       }
     }

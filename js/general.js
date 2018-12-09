@@ -164,22 +164,26 @@ function createCircle(clases) {
     }
 }
 
+var fixWidth = 10; // 4 imagenes - (10 + 10 + 10 margin images)
 function slides(dir) {
     var ele = $('.carousel-inner');
-    var current = ele.css('left');
+    var container = $('#carousel');
+    var containerWidth = container.width() + fixWidth;
+    var current = Math.abs(parseInt(ele.css('left')));
+    var currentNatural = parseInt(ele.css('left'));
     var items = ele.find('.item').length;
     var translationMargin = 10;
     var translation = Math.abs(parseInt($($('.carousel-inner').find('.item')[0]).css('width')));
     translation += translationMargin;
-    // translation '180px' parse
     //
-    console.log(current); // DEBUG
-    //
-    if (dir == 'left') {
-        if (current != '0px') {
-            ele.css('left', '-=' + translation);
+    if (dir == 'right') {
+        var leftTotal = (containerWidth) - (translation * items);
+        if (currentNatural != leftTotal) {
+            ele.animate({'left': '-=' + translation}, 200);
         }
-    } else if (dir == 'right') {
-        ele.css('left', '+=' + translation);
+    } else if (dir == 'left') {
+        if (current != 0) {
+            ele.animate({'left': '+=' + translation}, 200);
+        }
     }
 }
