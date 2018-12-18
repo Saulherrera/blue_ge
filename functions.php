@@ -206,6 +206,9 @@ remove_filter('the_content', 'wpautop');
 add_shortcode('teachers', 'teachers_shortcode');
 add_shortcode('advises', 'advises_shortcode');
 add_shortcode('casos_de_exito', 'casos_de_exito_shortcode');
+add_shortcode('estudios_relacionados', 'estudios_relacionados_shortcode');
+add_shortcode('modulos', 'modulos_shortcode');
+add_shortcode('metodologia', 'metodologia_shortcode');
 
 function casos_de_exito_shortcode()
 {
@@ -218,9 +221,9 @@ function casos_de_exito_shortcode()
         $url = $src[0];
         $href = get_post_custom_values('ctm_url_video', $case->ID)[0];
         $items .= '
-        <a href="'. $href .'" target="_blank">
+        <a href="' . $href . '" target="_blank">
             <div class="ctm_case" style="background-image: url(' . ($url) . ')">
-                <div class="col-xs-12 col-md-7  ctm_case_content">    
+                <div class="col-xs-12 col-md-6  ctm_case_content">    
                     <h1>Casos de exito</h1>
                     ' . $case->post_content . '
                 </div>
@@ -232,7 +235,7 @@ function casos_de_exito_shortcode()
 
     return '
             <div class="casos_line">
-                '. $items .'
+                ' . $items . '
             </div>    
     ';
 }
@@ -326,4 +329,101 @@ function advises_shortcode()
                     </p>
                 </a>
             </div>';
+}
+
+function estudios_relacionados_shortcode()
+{
+    return '<div class="row">
+        <div class="col-sm-4 box_links_one">
+            <div class="box_links_image"><img class="alignnone size-medium wp-image-339"
+                                              src="https://practicas.gestor-energetico.com/site/wp-content/uploads/2018/12/post-bim-300x300.jpg"
+                                              alt=""/></div><a href="#"> <div class="box_links_content"></div></a>
+        </div>
+        <div class="col-sm-4 box_links_two">
+            <div class="box_links_image"><img class="alignnone size-medium wp-image-340"
+                                              src="https://practicas.gestor-energetico.com/site/wp-content/uploads/2018/12/post-infraestructuras-300x300.jpg"
+                                              alt=""/></div><a href="#"> <div class="box_links_content">
+                <h2 class="nonstyled"><strong>Postgrado</strong> Infraestructuras BIM</h2>
+            </div>
+            </a>
+        </div>
+        <div class="col-sm-4 box_links_three">
+            <div class="box_links_image"><img class="alignnone size-medium wp-image-338"
+                                              src="https://practicas.gestor-energetico.com/site/wp-content/uploads/2018/12/cursos-workshops-300x300.jpg"/>
+            </div>
+            <a href="#"> <div class="box_links_content">
+                <h2 class="nonstyled"><strong>Cursos y Workshops en latinoamérica</strong></h2>
+            </div>
+            </a>
+        </div>
+    </div>';
+}
+
+function metodologia_shortcode()
+{
+    return '    <div class="col-sm-3"><img class="alignnone size-full wp-image-293"
+                               src="https://practicas.gestor-energetico.com/site/wp-content/uploads/2018/11/metodologia_iconos_1.png"
+                               alt="" width="118" height="76"/>
+<h4>
+Videoconferencias <span>en directo</span>
+</h4>
+    </div>
+    <div class="col-sm-3"><img class="alignnone size-full wp-image-293"
+                               src="https://practicas.gestor-energetico.com/site/wp-content/uploads/2018/11/metodologia_iconos_2.png"
+                               alt="" width="118" height="76"/><h4>Videotutoriales y <span>documentación</span></h4>
+
+    </div>
+    <div class="col-sm-3"><img class="alignnone size-full wp-image-293"
+                               src="https://practicas.gestor-energetico.com/site/wp-content/uploads/2018/11/metodologia_iconos_3.png"
+                               alt="" width="118" height="76"/><h4>Foro <span>interactivo</span></h4>
+
+    </div>
+    <div class="col-sm-3"><img class="alignnone size-full wp-image-293"
+                               src="https://practicas.gestor-energetico.com/site/wp-content/uploads/2018/11/metodologia_iconos_4.png"
+                               alt="" width="118" height="76"/><h4>Máxima <span>flexibilidad</span></h4>
+
+    </div>
+';
+}
+
+function modulos_shortcode($id = 'bim')
+{
+    $id = strtolower($id['id']);
+    $modulos = [];
+    $response = '';
+
+
+    switch ($id) {
+        case 'bim':
+        case 'arq-bioclimatica':
+        case 'simulacion-energetica':
+        case '3d-realidad-aumentada':
+        case 'civil-infraestructuras':
+        case 'integrated-design':
+            $modulos = [
+                0 => 'Estándares BIM y Project Management',
+                1 => 'BIM Revit Architecture',
+                2 => 'BIM Revit Estructuras',
+                3 => 'Coordinación de proyectos BIM',
+                4 => 'BIM Iluminación',
+                5 => 'Eficiencia Energética BIM',
+                6 => 'Planificación y Gestión empresarial BIM',
+                7 => 'BIM Project Management',
+                8 => 'BIM Instalaciones MEP',
+                9 => 'Entornos BIM: Archicad y Allplan',
+                10 => 'BIM Tekla Structures',
+                11 => 'Sostenibilidad BIM',
+            ];
+            break;
+
+    }
+    if (count($modulos) > 0) {
+        foreach ($modulos as $k => $name) {
+            $response .= '<div class="col-sm-4 m_' . ($k + 1) . '"><a href="#"><span class="ctm_pictograma"></span><p>
+                            <strong>' . $name . '</strong></p></a>
+                        </div>';
+        }
+    }
+
+    return $response;
 }

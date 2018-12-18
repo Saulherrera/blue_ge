@@ -21,7 +21,7 @@ if ( $chkr && (!$chkr2) ) {
             <li class="sideicon_dw"><a href="#"><span></span><?= esc_html__( 'Descarga el temario', 'blue_ge' ) ?></a>
             </li>
             <li class="sideicon_rv"><a href="#"><span></span><?= esc_html__( 'Reserva tu plaza', 'blue_ge' ) ?></a></li>
-            <li class="sideicon_sk"><a href="#"><span></span><?= esc_html__( 'Pregúntanos', 'blue_ge' ) ?></a></li>
+            <li class="sideicon_sk"><a href="#"><span></span><?= esc_html__( 'Contáctanos', 'blue_ge' ) ?></a></li>
         </ul>
         <div class="sidecontent">
             <dl>

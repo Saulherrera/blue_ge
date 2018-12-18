@@ -23,6 +23,9 @@
 </head>
 
 <body <?php body_class(); ?>>
+<div class="header_contactanos">
+    <p><a href="#preguntanos">Contáctanos</a></p>
+</div>
 <div id="page" class="site">
     <a class="skip-link screen-reader-text" href="#content"><?php esc_html_e('Skip to content', 'blue_ge'); ?></a>
     <?php

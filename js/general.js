@@ -1,3 +1,23 @@
+/*general*/
+
+
+$(function () {
+    // LINKS ANIMATION
+    $('a[href^=\\#]').click(function (event) {
+        var top = 0;
+        if ($.attr(this, 'href').length > 1) {
+            if ($($.attr(this, 'href')).length > 0) {
+                top = $($.attr(this, 'href')).offset().top - 200;
+            }
+        }
+        $('html, body').animate({
+            scrollTop: top
+        }, 500);
+        event.preventDefault();
+    });
+});
+
+
 /*load sidebar*/
 var servicePage = jQuery('.page-services');
 if (servicePage.length === 1) {
